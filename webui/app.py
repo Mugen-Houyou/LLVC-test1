@@ -1,7 +1,12 @@
 import os
 import uuid
 import threading
+import sys
 from flask import Flask, request, jsonify, send_file, render_template
+
+# Allow imports from repository root when running this script directly
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from infer import load_model, load_audio, save_audio, do_infer
 
 app = Flask(__name__)
