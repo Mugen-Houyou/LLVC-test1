@@ -22,9 +22,13 @@ conda activate llvc
 
 ## 4. 추가 패키지 설치
 
-`llvc` 환경이 활성화된 상태에서 다음 명령으로 프로젝트 의존성을 설치합니다:
+`llvc` 환경이 활성화된 상태에서 프로젝트 의존성을 설치합니다. Ubuntu나 Debian
+리눅스 사용자라면 먼저 C++ 컴파일러가 포함된 패키지를 설치하세요. `fairseq`와
+`pyworld`는 C++ 확장 모듈을 빌드하므로 g++가 없으면 오류가 발생합니다:
 
 ```bash
+sudo apt update
+sudo apt install build-essential
 pip install -r requirements.txt
 ```
 
