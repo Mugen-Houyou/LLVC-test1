@@ -55,7 +55,10 @@ The converted audio will be saved inside a folder named `converted_out`.
 
 ## 7. (Optional) Evaluation Tools
 
-If you want to run the evaluation script (`eval.py`), create a **separate** Python 3.9 environment:
+Evaluation tools help you measure how well the model performs. LLVC includes an
+`eval.py` script for this purpose. You can skip this section if you only want to
+use the provided pretrained models. If you do wish to try the evaluation, create
+a **separate** Python 3.9 environment:
 
 ```bash
 conda create -n llvc-eval python=3.9
