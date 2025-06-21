@@ -24,6 +24,15 @@ You should now be able to run `python infer.py` and convert all of the files in 
 
 `compare_infer.py` allows you to reproduce our streaming no-f0 RVC and QuickVC conversions on input audio of your choice. By default, `window_ms` and `extra_convert_size` are set to the values used for no-f0 RVC conversion. See the linked paper for the QuickVC conversion parameters.
 
+## Web UI
+This repository includes a basic Flask application to demonstrate LLVC in a browser. Start the server with:
+
+```bash
+python webui/app.py
+```
+
+Open `http://localhost:8000` and upload an audio file. The server will convert the file using the pretrained model and provide a link to download the result.
+
 ## Training
 1. Create a folder `experiments/my_run` containing a `config.json` (see `experiments/llvc/config.json` for an example)
 2. Edit the `config.json` to reflect the location of your dataset and desired architectural modifications
