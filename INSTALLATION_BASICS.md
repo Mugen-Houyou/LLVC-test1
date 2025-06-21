@@ -86,4 +86,3 @@ link appears. Press `Ctrl+C` in the terminal to stop the server.
 
 * To convert your own files, run `python infer.py -p my_checkpoint.pth -c my_config.json -f path/to/audio` (see `README.md` for details).
 
-That's it! You now have LLVC set up and can experiment with voice conversion.

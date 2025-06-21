@@ -82,4 +82,3 @@ python webui/app.py
 
 * 자신만의 오디오 파일을 변환하려면 `python infer.py -p my_checkpoint.pth -c my_config.json -f path/to/audio` 명령을 사용하세요. 자세한 옵션은 `README.md`를 참고합니다.
 
-이제 LLVC가 준비되었습니다. 다양한 음성 변환을 실험해 보세요.

@@ -9,7 +9,12 @@ import numpy as np
 import torch
 import torch.nn.functional as F
 
-from scipy.signal import kaiser
+# SciPy 1.12 moved the window functions under scipy.signal.windows.
+# Support both old and new versions by falling back if needed.
+try:
+    from scipy.signal.windows import kaiser
+except Exception:  # pragma: no cover - for compatibility
+    from scipy.signal import kaiser
 
 
 def design_prototype_filter(taps=62, cutoff_ratio=0.15, beta=9.0):
@@ -118,4 +123,3 @@ class PQMF(torch.nn.Module):
         # TODO(kan-bayashi): Understand the reconstruction procedure
         x = F.conv_transpose1d(x, self.updown_filter *
                                self.subbands, stride=self.subbands)
-        return F.conv1d(self.pad_fn(x), self.synthesis_filter)
