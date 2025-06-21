@@ -44,6 +44,23 @@ python infer.py -f input.wav -s -n 2
 python infer.py -f my_wavs -o outputs
 ```
 
+## 7. RVC 모델로 변환하기
+LLVC 외에 RVC 모델로도 음성 변환을 수행할 수 있습니다. `compare_infer.py` 스크립트를 사용하면 기본 제공 RVC 모델을 로드하여 변환을 실행할 수 있습니다.
+
+### 단일 파일 예시
+
+```bash
+python compare_infer.py -f input.wav -m rvc -o rvc_results
+```
+
+### 폴더 전체 변환 예시
+
+```bash
+python compare_infer.py -f my_wavs -m rvc -o rvc_results
+```
+
+`-m rvc` 옵션을 통해 RVC 모델(`llvc_models/models/rvc_no_f0/f_8312_no_f0-300.pth`)을 사용하며, `--window_ms` 등 추가 파라미터로 스트리밍 설정을 조절할 수 있습니다.
+
 ## 마무리
 이제 위 예시들을 바탕으로 원하는 오디오 파일을 자유롭게 변환해 보세요. 사용 가능한 모든 옵션은 `python infer.py -h` 명령으로 확인할 수 있습니다.
 
