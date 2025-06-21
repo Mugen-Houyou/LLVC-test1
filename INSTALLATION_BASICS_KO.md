@@ -29,6 +29,7 @@ conda activate llvc
 ```bash
 sudo apt update
 sudo apt install build-essential
+pip install 'numpy<2'
 pip install -r requirements.txt
 ```
 

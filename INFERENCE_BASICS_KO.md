@@ -53,13 +53,21 @@ LLVC 외에 RVC 모델로도 음성 변환을 수행할 수 있습니다. `compa
 python compare_infer.py -f input.wav -m rvc -o rvc_results
 ```
 
+체크포인트를 직접 지정하려면 다음과 같이 `--model_path` 옵션을 사용합니다.
+
+```bash
+python compare_infer.py -f input.wav -m rvc \
+    --model_path "llvc_models/models/rvc/Voice_AhHyun_55e_123045s.pth" \
+    -o rvc_results
+```
+
 ### 폴더 전체 변환 예시
 
 ```bash
 python compare_infer.py -f my_wavs -m rvc -o rvc_results
 ```
 
-`-m rvc` 옵션을 통해 RVC 모델(`llvc_models/models/rvc_no_f0/f_8312_no_f0-300.pth`)을 사용하며, `--window_ms` 등 추가 파라미터로 스트리밍 설정을 조절할 수 있습니다.
+`-m rvc` 옵션을 통해 RVC 모델(`llvc_models/models/rvc_no_f0/f_8312_no_f0-300.pth`)을 사용하며, `--window_ms` 등 추가 파라미터로 스트리밍 설정을 조절할 수 있습니다. 만약 실행 중 `AttributeError: _ARRAY_API`와 같이 NumPy 버전 관련 오류가 발생한다면 `pip install 'numpy<2'` 명령으로 NumPy 1.x 버전을 설치하세요.
 
 ## 마무리
 이제 위 예시들을 바탕으로 원하는 오디오 파일을 자유롭게 변환해 보세요. 사용 가능한 모든 옵션은 `python infer.py -h` 명령으로 확인할 수 있습니다.

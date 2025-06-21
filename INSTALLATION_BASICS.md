@@ -27,9 +27,12 @@ Visit [PyTorch's installation page](https://pytorch.org/get-started/locally/) an
 
 ## 4. Install Other Requirements
 
-With the `llvc` environment still active, install the remaining packages used by LLVC:
+While the `llvc` environment is active, install the remaining Python packages. `fairseq` and `pyworld` need a C++ compiler, so Ubuntu/Debian users should install `build-essential` first. Some RVC dependencies such as `faiss-cpu` are currently incompatible with NumPy 2.x, so we explicitly install NumPy 1.x.
 
 ```bash
+sudo apt update            # Ubuntu/Debian only
+sudo apt install build-essential
+pip install 'numpy<2'
 pip install -r requirements.txt
 ```
 
